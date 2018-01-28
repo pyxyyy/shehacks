@@ -96,12 +96,12 @@
     align-items: center;
 }
 .Rewards-title {
+    width: 100%;
     margin-top: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 150px;
     height: 150px;
     border-radius: 150px;
 }
@@ -130,6 +130,10 @@
     flex-direction: row;
     align-items: center;
     position: relative;
+}
+
+.Rewards-reward:hover {
+    cursor: pointer;
 }
 
 .Rewards-image {
@@ -263,7 +267,48 @@
     opacity: 0.2;
 }
 .star {
-    width: 60px;
+    width: 27px;
     height: 60px;
-    margin-bottom: 10px;
+}
+
+.Modal {
+    background-color: #00d4b4;
+    z-index: 8;
+    height: 500px;
+    width: 300px;
+    position: fixed;
+    margin-top: 100px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Modal-header {
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+.Modal-text {
+}
+
+.Modal-small-text {
+    margin-top: 10px;
+    font-size: 11px;
+    color: #ffffff;
+}
+
+.line {
+    border: solid 1px white;
+    width: 220px;
+}
+
+.barcode {
+    width: 220px;
+    margin-bottom: -65px;
+}
+
+.coffee {
+    margin-bottom: -40px;
 }

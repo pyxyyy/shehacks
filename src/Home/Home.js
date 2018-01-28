@@ -8,7 +8,9 @@ class Home extends Component {
         super();
         this.state = {
             selected: 2,
-            recycling: false
+            recycling: false,
+            modal: false, props,
+            points: 302
         }
     }
 
@@ -56,16 +58,41 @@ class Home extends Component {
         );
     };
 
+    buildModal = () => {
+        return (this.state.modal)
+            ? <div className="Modal" onClick={() => {this.setState({modal: false})}}>
+                <span className="Modal-header">ENJOY YOUR COFFEE</span>
+                <img className="coffee" src={require('./coffee.svg')} />
+                <img className="barcode" src={require('./barcode.svg')} />
+                <span className="Modal-text">W678-Q4J8-A209-KEMN</span>
+                <div className="line" />
+                <span className="Modal-small-text">Terms & Conditions apply.</span>
+            </div>
+            : null;
+    };
+
     renderRewards = () => {
+
+        const starbucksStyle = this.state.points >= 300 ? "Rewards-reward" : "Rewards-reward grey";
+        const starbucksMessage = this.state.points >= 300 ? "You're doing good!" : "Big changes start small.";
+
         return <div className="Rewards">
+
             <div className="Rewards-title">
                 <img className="star" src={require('./star.svg')} />
-            <span className="Rewards-number">302</span>
-            <span className="Rewards-points">You're doing good!</span>
+                <span className="Rewards-number">{this.state.points}</span>
+                <span className="Rewards-points">{starbucksMessage}</span>
             </div>
 
             <div className="Rewards-list">
-                <div className="Rewards-reward">
+                <div className={starbucksStyle} onClick={() => {
+                    this.setState({
+                        modal: true
+                    });
+                    this.setState({
+                        points: this.state.points - 300
+                    })
+                }}>
                         <img className="Rewards-image" src={require('./starbucks.svg')} />
                         <div className="Rewards-reward-info">
                             <span className="Rewards-reward-company">Starbucks</span>
@@ -94,6 +121,7 @@ class Home extends Component {
 
 
             </div>
+            {this.buildModal()}
         </div>
     };
 
