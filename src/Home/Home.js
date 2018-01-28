@@ -72,10 +72,12 @@ class Home extends Component {
                 <img className="Account-edit" src={require('./edit.svg')} />
             </div>
             <div className="Account-controls">
-                <span></span>
-                <span>Settings</span>
-                <span>Support</span>
-                <span>Logout</span>
+                <span className="Account-control" id="a">Change Password</span>
+                <span className="Account-control" id="b">Add Friends</span>
+                <span className="Account-control" id="c">Form Teams</span>
+                <span className="Account-control" id="d">Settings</span>
+                <span className="Account-control" id="e">Support</span>
+                <span className="Account-control" id="f">Logout</span>
             </div>
 
         </div>
