@@ -57,8 +57,43 @@ class Home extends Component {
     };
 
     renderRewards = () => {
-        return <div className="Recycle">
-            <span className="Recycle-title">Logo</span>
+        return <div className="Rewards">
+            <div className="Rewards-title">
+                <img className="star" src={require('./star.svg')} />
+            <span className="Rewards-number">302</span>
+            <span className="Rewards-points">You're doing good!</span>
+            </div>
+
+            <div className="Rewards-list">
+                <div className="Rewards-reward">
+                        <img className="Rewards-image" src={require('./starbucks.svg')} />
+                        <div className="Rewards-reward-info">
+                            <span className="Rewards-reward-company">Starbucks</span>
+                            <span className="Rewards-reward-description">A free drink on us</span>
+                        </div>
+                    <span className="Rewards-cost">300</span>
+                </div>
+
+                <div className="Rewards-reward grey">
+                    <img className="Rewards-image nike" src={require('./amazon.png')} />
+                    <div className="Rewards-reward-info">
+                        <span className="Rewards-reward-company">Amazon</span>
+                        <span className="Rewards-reward-description">Free 2-day shipping on <br/>your next online purchase</span>
+                    </div>
+                    <span className="Rewards-cost">1000</span>
+                </div>
+
+                <div className="Rewards-reward grey">
+                    <img className="Rewards-image nike" src={require('./nike.jpg')} />
+                    <div className="Rewards-reward-info">
+                        <span className="Rewards-reward-company">Nike</span>
+                        <span className="Rewards-reward-description">Take 10% off your <br/>next in-store purchase</span>
+                    </div>
+                    <span className="Rewards-cost">2500</span>
+                </div>
+
+
+            </div>
         </div>
     };
 
@@ -68,8 +103,11 @@ class Home extends Component {
                 <img className="Account-avatar" src={require('./avatar.svg')} />
             </div>
             <div className="Account-display-name">
-                <span className="Account-name">Jane Doe</span>
-                <img className="Account-edit" src={require('./edit.svg')} />
+                <div className="Account-me">
+                    <span className="Account-name">Jane Doe</span>
+                    <img className="Account-edit" src={require('./edit.svg')} />
+                </div>
+                <span className="Account-rank">Budding Environmentalist</span>
             </div>
             <div className="Account-controls">
                 <span className="Account-control" id="a">Change Password</span>
