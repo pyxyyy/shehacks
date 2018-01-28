@@ -209,7 +209,7 @@
 }
 
 .Account-display-name {
-    margin-top: -10px;
+    margin-top: -14px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -225,19 +225,15 @@
 
 .Account-rank {
     color: #00d4b4;
-    font-size: 14px;
+    font-size: 11px;
+    letter-spacing: 2px;
 }
 
 .Account-controls {
     display: flex;
     flex-direction: column;
-    margin-top: 18px;
+    margin-top: 20px;
     width: 100%;
-}
-
-.Account-controls-row {
-    display: flex;
-    flex-direction: row;
 }
 
 .Account-control {
@@ -311,4 +307,219 @@
 
 .coffee {
     margin-bottom: -40px;
+}
+
+.Me {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.Team {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.Team-graph-title {
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+.Team-graph-title-2 {
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    margin-top: 60px;
+}
+
+.Team-graph-title-padded {
+    margin-top: 40px;
+}
+
+.Team-legend {
+    width: 75%;
+    display: flex;
+    flex-direction: row;
+    font-size: 11px;
+    justify-content: space-around;
+}
+
+.float-1 {
+    position: fixed;
+    top: 250px;
+    left: 90px;
+}
+
+.float-2 {
+    position: fixed;
+    top: 190px;
+    right: 105px;
+}
+
+.Me-legend {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    font-size: 11px;
+    justify-content: space-around;
+}
+
+.Team-alert {
+    margin-top: 25px;
+    color: #00d4b4;
+    font-family: "AvenirNext-Medium", sans-serif;
+    font-size: 12px;
+}
+
+.lightning {
+    width: 16px;
+    height: 16px;
+}
+
+.down {
+    width: 12px;
+    height: 12px;
+    margin-left: 5px;
+}
+
+.filter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 40px -5px 20px 15px;
+    padding: 2px 12px 2px 16px;
+    border: solid 1px white;
+    border-radius: 15px;
+    font-size: 14px;
+}
+
+.more {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0px -5px 20px 15px;
+    padding: 2px 12px 2px 16px;
+    border: solid 1px white;
+    border-radius: 15px;
+    font-size: 14px;
+}
+
+.Team-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 80%;
+}
+
+.Team-board {
+    width: 100%;
+    border-collapse: collapse;
+    padding: 0;
+    border: 0;
+    height: 200px;
+}
+
+.Team-id {
+    width: 100%;
+    height: 40px;
+    padding: 16px 0;
+    margin: 1px 0;
+}
+
+.Team-id > td {
+    text-align: left;
+    padding: 0px 30px;
+}
+
+#a {
+    background-color: #303030;
+}
+
+#b {  }
+
+.legend-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#c {
+    background-color: rgba(0, 212, 180, 0.91);
+    font-family: "AvenirNext-Medium", sans-serif;
+}
+
+.line-me {
+    border: solid 1px #00d4b4;
+    width: 20px;
+    height: 0;
+    margin-right: 5px;
+}
+
+.line-them {
+    border: solid 1px #98edf5;
+    width: 20px;
+    height: 0;
+    margin-right: 5px;
+}
+
+
+.box-1 {
+    background-color: #00d4b4;
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+}
+
+.box-2 {
+    background-color: #98edf5;
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+}
+
+.Me-texts {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 70%;
+}
+
+.Me-text {
+    margin-top: 10px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    width: 100px;
+}
+
+.bigbar {
+    height: 12px;
+    width: 220px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.smallbar {
+    height: 12px;
+    width: 60px;
+    background-color: #00d4b4;
+    border-radius: 10px;
+}
+
+.funfact {
+    width: 70%;
+    font-size: 14px;
+}
+
+.blue {
+    color: #00d4b4;
+    font-family: "AvenirNext-Medium", sans-serif;
 }

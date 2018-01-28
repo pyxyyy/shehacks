@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './Home.css';
 import NavBar from "../NavBar/NavBar";
 import HeaderBar from "../HeaderBar/HeaderBar";
+import AreaGraph from "./AreaGraph/AreaGraph";
+import PieGraph from "./PieGraph/PieGraph";
 
 class Home extends Component {
     constructor(props) {
@@ -21,11 +23,101 @@ class Home extends Component {
     };
 
     renderPersonalStats = () => {
-        return <div>personal stats</div>
+        return <div className="Me">
+            <div className="Team-buttons">
+            <div className="more">
+                More
+                <img className="down" src={require('./down.svg')} />
+            </div>
+            </div>
+            <span className="Team-graph-title">THIS WEEK'S BINS</span>
+            <PieGraph />
+            <span className="float-1">130</span>
+            <span className="float-2">30</span>
+            <div className="Me-legend">
+                <div className="legend-group">
+                    <div className="box-1" />
+                    <span>Trash</span>
+                </div>
+                <div className="legend-group">
+                    <div className="box-2" />
+                    <span>Recyclables</span>
+                </div>
+            </div>
+
+            <span className="Team-graph-title-2">POINTS TO NEXT RANK</span>
+            <div className="bigbar">
+                <div className="smallbar" />
+            </div>
+            <div className="Me-texts">
+            <span className="Me-text">
+               SPROUTING SEEDLING
+            </span>
+            <span className="Me-text">
+                BUDDING BLOSSOM
+            </span>
+            </div>
+
+            <span className="Team-graph-title-2">DID YOU KNOW?</span>
+            <span className="funfact"><span className="blue"> Cut the tamper ring </span> (ring below your plastic bottle cap) before binning it. Marine animals are at risk of getting caught in them. </span>
+        </div>
     };
 
     renderTeamStats = () => {
-        return <div>team stats</div>
+        return <div className="Team">
+            <span className="Team-graph-title">THIS WEEK'S STATS</span>
+            <AreaGraph />
+            <div className="Team-legend">
+                <div className="legend-group">
+                    <div className="line-me" />
+                    <span>Boston University</span>
+                </div>
+                <div className="legend-group">
+                    <div className="line-them" />
+                    <span>Global Average</span>
+                </div>
+            </div>
+            <div className="Team-buttons">
+                <span className="filter">
+                Filter
+                <img className="lightning" src={require('./filter.svg')} />
+            </span>
+            </div>
+            <table className="Team-board">
+                <tbody>
+                <tr className="Team-id" id="c">
+                    <td>Boston</td>
+                    <td>20k</td>
+                    <td>#1</td>
+                </tr>
+                <tr className="Team-id" id="b">
+                    <td>Northeastern</td>
+                    <td>15k</td>
+                    <td>#4</td>
+                </tr>
+                <tr className="Team-id" id="a">
+                    <td>Suffolk</td>
+                    <td>18k</td>
+                    <td>#3</td>
+                </tr>
+                <tr className="Team-id" id="b">
+                    <td>Tufts</td>
+                    <td>18k</td>
+                    <td>#2</td>
+                </tr>
+                <tr className="Team-id" id="a">
+                    <td>MIT</td>
+                    <td>12k</td>
+                    <td>#6</td>
+                </tr>
+                <tr className="Team-id" id="b">
+                    <td>UMass</td>
+                    <td>14k</td>
+                    <td>#5</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     };
 
     recycle = () => {
@@ -74,7 +166,7 @@ class Home extends Component {
     renderRewards = () => {
 
         const starbucksStyle = this.state.points >= 300 ? "Rewards-reward" : "Rewards-reward grey";
-        const starbucksMessage = this.state.points >= 300 ? "You're doing good!" : "Big changes start small.";
+        const starbucksMessage = this.state.points >= 300 ? "You're doing great." : "Big changes start small.";
 
         return <div className="Rewards">
 
@@ -93,11 +185,11 @@ class Home extends Component {
                         points: this.state.points - 300
                     })
                 }}>
-                        <img className="Rewards-image" src={require('./starbucks.svg')} />
-                        <div className="Rewards-reward-info">
-                            <span className="Rewards-reward-company">Starbucks</span>
-                            <span className="Rewards-reward-description">A free drink on us</span>
-                        </div>
+                    <img className="Rewards-image" src={require('./starbucks.svg')} />
+                    <div className="Rewards-reward-info">
+                        <span className="Rewards-reward-company">Starbucks</span>
+                        <span className="Rewards-reward-description">A free drink on us</span>
+                    </div>
                     <span className="Rewards-cost">300</span>
                 </div>
 
@@ -135,15 +227,15 @@ class Home extends Component {
                     <span className="Account-name">Jane Doe</span>
                     <img className="Account-edit" src={require('./edit.svg')} />
                 </div>
-                <span className="Account-rank">Budding Environmentalist</span>
+                <span className="Account-rank">SPROUTING SEEDLING</span>
             </div>
             <div className="Account-controls">
-                <span className="Account-control" id="a">Change Password</span>
-                <span className="Account-control" id="b">Add Friends</span>
-                <span className="Account-control" id="c">Form Teams</span>
-                <span className="Account-control" id="d">Settings</span>
-                <span className="Account-control" id="e">Support</span>
-                <span className="Account-control" id="f">Logout</span>
+                <span className="Account-control" >Change Password</span>
+                <span className="Account-control" >Add Friends</span>
+                <span className="Account-control" >Form Teams</span>
+                <span className="Account-control" >Settings</span>
+                <span className="Account-control" >Support</span>
+                <span className="Account-control" >Logout</span>
             </div>
 
         </div>

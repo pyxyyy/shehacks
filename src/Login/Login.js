@@ -32,7 +32,9 @@ class Login extends Component {
         return (
             <div className="Login">
                 <header className="Login-header">
-                    <span className="Login-title">Logo</span>
+                    <span className="Login-title">
+                        <img className="logo" src={require("./Don'tBeTrashy-01.png")} />
+                    </span>
                     <input className="Login-username"
                            value={this.state.username}
                            onChange={(e) => {

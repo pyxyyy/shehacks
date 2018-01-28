@@ -24,6 +24,7 @@
     height: 240px;
     border-radius: 150px;
     background-color: #00d4b4;
+    position: relative;
 }
 
 .Login-username {
@@ -38,6 +39,7 @@
     margin: 10px 0 8px 0;
     font-size: 14px;
     font-family: "Avenir Next", sans-serif;
+    z-index: 15;
 }
 
 .Login-username::placeholder {
@@ -83,4 +85,12 @@
 
 .Login-button:hover {
     cursor: pointer;
+}
+
+.logo {
+    height: 140%;
+    width: 140%;
+    position: absolute;
+    top: -43px;
+    left: -35px;
 }

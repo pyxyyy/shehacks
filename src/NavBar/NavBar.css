@@ -28,6 +28,6 @@
     background-color: #303030;
 }
 
-table, tr, td, tbody {
+.NavBar-table > table, tr, td, tbody {
     border: none;
 }
