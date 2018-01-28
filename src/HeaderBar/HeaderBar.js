@@ -9,7 +9,7 @@ class HeaderBar extends Component {
     render() {
         return (
             <div className="HeaderBar">
-                DON'T BE TRASHY !!!!!
+                DON'T BE TRASHY
             </div>
         );
     }
