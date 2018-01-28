@@ -12,7 +12,8 @@ class Home extends Component {
             selected: 2,
             recycling: false,
             modal: false, props,
-            points: 302
+            points: 302,
+            submitted: false
         }
     }
 
@@ -25,10 +26,10 @@ class Home extends Component {
     renderPersonalStats = () => {
         return <div className="Me">
             <div className="Team-buttons">
-            <div className="more">
-                More
-                <img className="down" src={require('./down.svg')} />
-            </div>
+                <div className="more">
+                    More
+                    <img className="down" src={require('./down.svg')} />
+                </div>
             </div>
             <span className="Team-graph-title">THIS WEEK'S BINS</span>
             <PieGraph />
@@ -53,7 +54,7 @@ class Home extends Component {
             <span className="Me-text">
                SPROUTING SEEDLING
             </span>
-            <span className="Me-text">
+                <span className="Me-text">
                 BUDDING BLOSSOM
             </span>
             </div>
@@ -121,8 +122,88 @@ class Home extends Component {
     };
 
     recycle = () => {
-        // backend call goes here
-        // call `this.setState({ recycling: false })` on a successful response
+        setTimeout(function(){ this.setState({recycling: false}); }.bind(this), 3000);
+        let request = {
+            "requests":[
+                {
+                    "image":{
+                        "source":{
+                            "imageUri":
+                                "gs://dontbetrashy/banana.jpg"
+                        }
+                    },
+                    "features":[
+                        {
+                            "type":"LABEL_DETECTION",
+                            "maxResults":1
+                        }
+                    ]
+                }
+            ]
+        };
+        let response = {
+            "responses": [
+                {
+                    "labelAnnotations": [
+                        {
+                            "mid": "/m/09qck",
+                            "description": "banana",
+                            "score": 0.93886006,
+                            "topicality": 0.93886006
+                        },
+                        {
+                            "mid": "/m/013xk6",
+                            "description": "banana family",
+                            "score": 0.9328162,
+                            "topicality": 0.9328162
+                        },
+                        {
+                            "mid": "/m/036qh8",
+                            "description": "produce",
+                            "score": 0.92985094,
+                            "topicality": 0.92985094
+                        },
+                        {
+                            "mid": "/m/088fh",
+                            "description": "yellow",
+                            "score": 0.9255912,
+                            "topicality": 0.9255912
+                        },
+                        {
+                            "mid": "/m/02xwb",
+                            "description": "fruit",
+                            "score": 0.9022052,
+                            "topicality": 0.9022052
+                        },
+                        {
+                            "mid": "/m/02wbm",
+                            "description": "food",
+                            "score": 0.6601102,
+                            "topicality": 0.6601102
+                        },
+                        {
+                            "mid": "/m/09qdd",
+                            "description": "cooking plantain",
+                            "score": 0.6498568,
+                            "topicality": 0.6498568
+                        }
+                    ]
+                }
+            ]
+        };
+        let description = response.responses[0].labelAnnotations;
+        let flag = false;
+        for (let i=0; i<description.length; i++) {
+            if (description[i].description === "fruit") {
+                flag = true;
+            }
+        }
+
+        if (flag === true) {
+            return 1
+        } else {
+            return 0
+        }
     };
     renderRecycle = () => {
         if (this.state.recycling) {
