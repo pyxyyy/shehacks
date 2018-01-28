@@ -7,7 +7,8 @@ class Home extends Component {
     constructor(props) {
         super();
         this.state = {
-            selected: 2
+            selected: 2,
+            recycling: false
         }
     }
 
@@ -15,10 +16,6 @@ class Home extends Component {
         this.setState({
             selected: idx
         })
-    };
-
-    recycle = () => {
-
     };
 
     renderPersonalStats = () => {
@@ -29,13 +26,34 @@ class Home extends Component {
         return <div>team stats</div>
     };
 
+    recycle = () => {
+        // backend call goes here
+        // call `this.setState({ recycling: false })` on a successful response
+    };
     renderRecycle = () => {
-        return <div className="Recycle">
-            <button className="Recycle-button"
-                    onClick={() => {this.recycle()}}
-                    onKeyDown={(e) => { if (e.keyCode === 13) this.recycle(); }}
-            >HELP SAVE THE EARTH</button>
-        </div>
+        if (this.state.recycling) {
+            return (
+                <div className="Recycle">
+                    <div className="spinner">
+                        <div className="dot1" />
+                        <div className="dot2" />
+                    </div>
+                    <span className="Recycle-text">Hold on while we figure out <br/>the right bin for your item. We got this.</span>
+                </div>
+            );
+        }
+        return (
+            <div className="Recycle">
+                <img className="Recycle-earth" src={require('./earth.svg')} />
+                <span className="Recycle-text">Go on, start saving the earth.</span>
+                <button className="Recycle-button"
+                        onClick={() => {
+                            this.setState({recycling: true});
+                            this.recycle();
+                        }}
+                >RECYCLE SOMETHING</button>
+            </div>
+        );
     };
 
     renderRewards = () => {
@@ -45,15 +63,15 @@ class Home extends Component {
     };
 
     renderAccount = () => {
-        return <div className="Recycle">
-            <div className="Recycle-title">
-                <img className="Recycle-avatar" src={require('./avatar.svg')} />
+        return <div className="Account">
+            <div className="Account-title">
+                <img className="Account-avatar" src={require('./avatar.svg')} />
             </div>
-            <div className="Recycle-display-name">
-                <span className="Recycle-name">Jane Doe</span>
-                <img className="Recycle-edit" src={require('./edit.svg')} />
+            <div className="Account-display-name">
+                <span className="Account-name">Jane Doe</span>
+                <img className="Account-edit" src={require('./edit.svg')} />
             </div>
-            <div className="Recycle-controls">
+            <div className="Account-controls">
                 <span></span>
                 <span>Settings</span>
                 <span>Support</span>

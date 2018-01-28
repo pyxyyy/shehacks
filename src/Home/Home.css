@@ -9,12 +9,92 @@
 }
 
 .Recycle {
+    height: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.spinner {
+    margin: 20px auto 80px auto;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    text-align: center;
+
+    -webkit-animation: sk-rotate 2.0s infinite linear;
+    animation: sk-rotate 2.0s infinite linear;
+}
+
+.dot1, .dot2 {
+    width: 60%;
+    height: 60%;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    background-color: #1cd4bc;
+    border-radius: 100%;
+    -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+    animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.dot2 {
+    top: auto;
+    background-color: #00c8d4;
+    bottom: 0;
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-rotate { 100% { -webkit-transform: rotate(360deg) }}
+@keyframes sk-rotate { 100% { transform: rotate(360deg); -webkit-transform: rotate(360deg) }}
+
+@-webkit-keyframes sk-bounce {
+    0%, 100% { -webkit-transform: scale(0.0) }
+    50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bounce {
+    0%, 100% {
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+    } 50% {
+          transform: scale(1.0);
+          -webkit-transform: scale(1.0);
+      }
+}
+
+.Recycle-earth {
+    height: 200px;
+}
+
+.Recycle-text {
+    margin-bottom: 25px;
+}
+
+.Recycle-button {
+    outline: none;
+    border: none;
+    background-color: #00b899;
+    color: white;
+    border-radius: 20px;
+    width: 290px;
+    height: 38px;
+    font-family: "Avenir Next", sans-serif;
+    font-size: 12px;
+    padding-top: 3px;
+    letter-spacing: 2px;
+}
+
+.Account {
     margin-top: 50px;
     height: 100%;
     color: white;
 }
 
-.Recycle-button {
+.Account-button {
     margin-top: 25px;
     outline: none;
     border: none;
@@ -29,7 +109,7 @@
     letter-spacing: 2px;
 }
 
-.Recycle-title {
+.Account-title {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -41,11 +121,11 @@
     background-color: #00d4b4;
 }
 
-.Recycle-avatar {
+.Account-avatar {
     width: 100%;
 }
 
-.Recycle-display-name {
+.Account-display-name {
     margin-top: -10px;
     display: flex;
     flex-direction: row;
@@ -53,20 +133,20 @@
     justify-content: center;
 }
 
-.Recycle-controls {
+.Account-controls {
     display: flex;
     flex-direction: column;
 
 }
 
-.Recycle-name {
+.Account-name {
     font-size: 24px;
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.Recycle-edit {
+.Account-edit {
     width: 32px;
     margin-left: 5px;
 }
