@@ -1,0 +1,86 @@
+.Login {
+    height: 95vh;
+    width: 100%;
+}
+
+.Login-header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 0 0 30px 0;
+    font-size: 22px;
+    color: #ffffff;
+}
+
+.Login-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 30px;
+    width: 240px;
+    height: 240px;
+    border-radius: 150px;
+    background-color: #00d4b4;
+}
+
+.Login-username {
+    text-align: center;
+    width: 280px;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: #222222;
+    border-bottom: solid 1px #00997e;
+    padding: 2px 0 5px 0;
+    margin: 10px 0 8px 0;
+    font-size: 14px;
+    font-family: "Avenir Next", sans-serif;
+}
+
+.Login-username::placeholder {
+    color: white;
+}
+
+.Login-username:focus::placeholder {
+    color: transparent;
+}
+
+.Login-forgot {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    padding-bottom: 20px;
+    font-size: 14px;
+    color: #808080;
+}
+
+.Login-forgot:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    color: white;
+}
+
+.Login-button {
+    margin-top: 25px;
+    outline: none;
+    border: none;
+    background-color: #00b899;
+    color: white;
+    border-radius: 20px;
+    width: 290px;
+    height: 38px;
+    font-family: "Avenir Next", sans-serif;
+    font-size: 12px;
+    padding-top: 3px;
+    letter-spacing: 2px;
+}
+
+.Login-button:hover {
+    cursor: pointer;
+}

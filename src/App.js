@@ -1,20 +1,36 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Home from "./Home/Home";
+import Login from "./Login/Login";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      page: "login"
+    }
+  }
+
+  setPage = (page) => {
+    this.setState({
+        page: page
+    })
+  };
+
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+    let page = <Login setPage={this.setPage} />;
+    switch (this.state.page) {
+        case ("login"):
+          page = <Login setPage={this.setPage}/>;
+          break;
+        case ('home'):
+          page = <Home setPage={this.setPage} />;
+          break;
+        default:
+          page = <Login setPage={this.setPage} />;
+          break;
+    }
+    return page;
   }
 }
 
