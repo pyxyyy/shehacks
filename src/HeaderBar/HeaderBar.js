@@ -4,14 +4,12 @@ import './HeaderBar.css';
 class HeaderBar extends Component {
     constructor(props) {
         super();
-        this.state = {
-        }
     }
 
     render() {
         return (
             <div className="HeaderBar">
-                DON'T BE TRASHY
+                DON'T BE TRASHY !!!!!
             </div>
         );
     }
